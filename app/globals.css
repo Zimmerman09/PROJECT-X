@@ -1,14 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Protest+Revolution&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Protest+Revolution&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    font-family: "Quicksand", sans-serif;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-   
-}
-body{
-    background: linear-gradient(to right top, #000000, #0c0106, #120311, #120619, #0d0b22);
+* {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }

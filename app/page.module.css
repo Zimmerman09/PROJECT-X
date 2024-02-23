@@ -1,0 +1,10 @@
+.container {
+  background: linear-gradient(
+    to right top,
+    #000000,
+    #0c0106,
+    #120311,
+    #120619,
+    #0d0b22
+  );
+}
