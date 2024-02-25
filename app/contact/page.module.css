@@ -1,71 +1,68 @@
-.container{
+.container {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-   background: linear-gradient(
+  background: linear-gradient(
     to right top,
     #000000,
     #0c0106,
     #120311,
     #120619,
     #0d0b22
-  );;
+  );
 }
-.header{
+.header {
   display: flex;
   padding-top: 40px;
   gap: 20px;
   flex-direction: column;
 }
-.header .txt1{
+.header .txt1 {
   font-size: 40px;
   text-align: center;
   color: #ffffffff;
   letter-spacing: 5px;
-
 }
-.header .txt2{
+.header .txt2 {
   font-size: 20px;
   color: #ffffffff;
   letter-spacing: 2px;
   text-align: center;
 }
-.form{
+.form {
   width: 70%;
   margin: auto;
   margin-top: 50px;
-  background-color:#131117;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  background-color: #131117;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   border-radius: 20px;
   height: 60vh;
-  
-
 }
-.form form{
- 
- padding: 50px 20px;
- display: flex;
- justify-content: center;
- gap: 50px;
- flex-direction: column;
+.form form {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-direction: column;
 }
-.form input{
+.form input {
   background-color: #131117;
   color: #ffff;
   padding: 10px;
- 
+  width: 85%;
   border: 1px solid white;
   outline: none;
   letter-spacing: 2px;
-
 }
 
-.form textarea{
-  background:#131117;
+.form textarea {
+  background: #131117;
   padding: 10px;
   resize: none;
-  width: 120vb;
+  width: 85%;
   height: 120px;
   border: none;
   color: #ffff;
@@ -75,16 +72,16 @@
   outline: none;
   letter-spacing: 2px;
 }
-.form ::placeholder{
+.form ::placeholder {
   color: white;
 }
-.btn1{
+.btn1 {
   display: flex;
   justify-content: center;
   padding: 10px 5px;
-
+  width: 10vw;
 }
-.btn1 button{
+.btn1 button {
   padding: 5px 15px;
   background: #ff5858;
   border: none;
@@ -95,18 +92,19 @@
   border-radius: 20px;
   transition: 0.5s;
 }
-.btn1 button:hover{
+.btn1 button:hover {
   background-color: #ffff;
   color: #000000;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.btn2{
+.btn2 {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
-.btn2 button{
+.btn2 button {
   padding: 5px 15px;
   background: #ff5858;
   border: none;
@@ -117,8 +115,17 @@
   border-radius: 20px;
   transition: 0.5s;
 }
-.btn2 button:hover{
+.btn2 button:hover {
   background-color: #ffff;
   color: #000000;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
 }
