@@ -119,9 +119,11 @@ const Mainpage = () => {
               delay: 1.5,
             }}
           >
+             <Link href="../../about">
               <button className={styles.btn1}>
                 <span className={styles.btn1txt}>ABOUT US</span>
               </button>
+             </Link>
           </motion.div>
         </div>
       </div>

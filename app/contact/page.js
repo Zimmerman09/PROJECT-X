@@ -28,7 +28,7 @@ const page = () => {
     event.preventDefault();
 
     if (!isFormValid) {
-      alert("Please fill out the form correctly.");
+      alert("Fill the form first");
       return;
     }
   };
@@ -66,20 +66,24 @@ const page = () => {
             type: "spring",
           }}
         >
-          <form onSubmit={handleSubmit} className={styles.formContainer}>
+          <form onSubmit={handleSubmit} className={styles.formContainer} action="https://formspree.io/f/xrgnkkzv" method="POST">
             <input
               type="text"
+              name="name"
               placeholder="ENTER YOUR NAME"
               value={name}
               onChange={(e) => handleInputChange(e, setName)}
             ></input>
             <input
-              type="email"
+              type="text"
+              name="email"
               placeholder="ENTER YOUR EMAIL"
               value={email}
               onChange={(e) => handleInputChange(e, setEmail)}
             ></input>
             <textarea
+              name="message"
+              type="text"
               placeholder="ADD COMMENT"
               value={comment}
               onChange={(e) => handleInputChange(e, setComment)}

@@ -80,6 +80,7 @@
   justify-content: center;
   padding: 10px 5px;
   width: 10vw;
+  cursor: pointer;
 }
 .btn1 button {
   padding: 5px 15px;
