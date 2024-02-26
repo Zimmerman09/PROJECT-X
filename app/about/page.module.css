@@ -92,16 +92,16 @@
     .services{
         justify-content: space-between;
         display: flex;
-        gap: 10px;
+        gap: 30px;
         flex-direction: column;
     }
     .service1{
         display: flex;
         justify-content: center;
         text-align: center;
-        gap: 5px;
+        gap: 15px;
         cursor: pointer;
-        padding: 10px;
+        padding: 20px 10px;
         border-radius: 30px;
         background: #503e3e2b;
       border-radius: 10px; 
@@ -111,10 +111,28 @@
     }
 
     .servicelist{
-        margin:50px;
+        margin:80px 90px;
       
       
       }
+      .header .txt1{
+        font-size: 25px;
+        letter-spacing: 5px;
+        color: #ffffff;
+    }
+    .header .txt2{
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: #ffffff;
+        margin: 0px 10px;
+    }
+    .service1 h1{
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .service1 p{
+        font-size: 14px;
+    }
 
 
 
@@ -134,3 +152,30 @@
 
 
   }
+  @media only screen and (max-width: 405px) {
+    .header .txt1{
+        font-size: 20;
+        letter-spacing: 5px;
+        color: #ffffff;
+    }
+    .header .txt2{
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+    
+
+
+
+  }
+
+  @media only screen and (max-width: 380px) {
+    .services{
+        justify-content: space-between;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+  }
+
+  

@@ -130,3 +130,47 @@
   align-items: center;
   gap: 1vh;
 }
+@media only screen and (max-width: 700px) {
+
+  .btn1 {
+    padding: 10px 40px;
+
+  }
+  .form textarea {
+    background: #131117;
+    padding: 10px;
+    resize: none;
+    width: 85%;
+    height: 120px;
+    border: none;
+    color: #ffff;
+    margin: auto;
+    text-align: center;
+    border: 1px solid white;
+    outline: none;
+    letter-spacing: 2px;
+  }
+  .form {
+    width: 90%;
+    margin: auto;
+    margin-top: 90px;
+    background-color: #131117;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+    height: 50vh;
+  }
+  .form form {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+  }
+  .btn2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+  }
+}
