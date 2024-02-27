@@ -5,30 +5,41 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useForm} from '@formspree/react';
+import { useForm } from "@formspree/react";
 
 const page = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [ready, setReady] = useState(false);
   const [state, handleSubmit] = useForm("xrgnkkzv");
+  const [successful, setSuccessful] = useState(false);
+
+  let isNameValid = name.length > 3;
+  let isEmailValid = String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  let isCommentValid = comment.length > 10;
 
   useEffect(() => {
-    const isNameValid = name.trim() !== "";
-    const isEmailValid = email.trim() !== "" && email.includes("@");
-    const isCommentValid = comment.trim() !== "";
-
     setIsFormValid(isNameValid && isEmailValid && isCommentValid);
+    setReady(false);
   }, [name, email, comment]);
 
   const handleInputChange = (event, setState) => {
     setState(event.target.value);
   };
 
- 
-
-
+  function checkSubmission(e) {
+    setReady(true);
+    if (isFormValid) {
+      handleSubmit(e);
+      setSuccessful(true);
+    }
+  }
 
   return (
     <>
@@ -63,7 +74,15 @@ const page = () => {
             type: "spring",
           }}
         >
-          <form onSubmit={handleSubmit} className={styles.formContainer} action="https://formspree.io/f/xrgnkkzv" method="POST">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              checkSubmission(e);
+            }}
+            className={styles.formContainer}
+            action="https://formspree.io/f/xrgnkkzv"
+            method="POST"
+          >
             <input
               type="text"
               name="name"
@@ -71,6 +90,9 @@ const page = () => {
               value={name}
               onChange={(e) => handleInputChange(e, setName)}
             ></input>
+            {ready && !isNameValid && (
+              <p className={styles.danger}>Please Enter Your Valid Name</p>
+            )}
             <input
               type="text"
               name="email"
@@ -78,6 +100,9 @@ const page = () => {
               value={email}
               onChange={(e) => handleInputChange(e, setEmail)}
             ></input>
+            {ready && !isEmailValid && (
+              <p className={styles.danger}>Please Enter A Valid Email</p>
+            )}
             <textarea
               name="message"
               type="text"
@@ -85,9 +110,17 @@ const page = () => {
               value={comment}
               onChange={(e) => handleInputChange(e, setComment)}
             ></textarea>
+            {ready && !isCommentValid && (
+              <p className={styles.danger}>Comment Is Too Short</p>
+            )}
             <button className={styles.btn1} type="submit">
               SUBMIT
             </button>
+            {successful ? (
+              <p className={styles.success}>Form submitted successfully!</p>
+            ) : (
+              ""
+            )}
           </form>
         </motion.div>
 
