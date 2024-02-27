@@ -5,12 +5,14 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useForm} from '@formspree/react';
 
 const page = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [state, handleSubmit] = useForm("xrgnkkzv");
 
   useEffect(() => {
     const isNameValid = name.trim() !== "";
@@ -24,14 +26,9 @@ const page = () => {
     setState(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+ 
 
-    if (!isFormValid) {
-      alert("Fill the form first");
-      return;
-    }
-  };
+
 
   return (
     <>
