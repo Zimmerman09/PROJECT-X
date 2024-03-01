@@ -1,15 +1,29 @@
 "use client"
-
-
 import React from 'react'
 import styles from './page.module.css'
 import Navbar from '../components/navbar'
 import {motion} from 'framer-motion'
+import { useState } from 'react'
 import Link from 'next/link'
-
-
+import { BsChevronLeft } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
+import { RxSlash } from "react-icons/rx";
 
 const page = () => {
+
+    const [copySuccess, setCopySuccess] = useState('');
+      const copyToClipBoard = async (copyMe) => {
+        try {
+          await navigator.clipboard.writeText(copyMe);
+          setCopySuccess('Copied!');
+        } catch (err) {
+          setCopySuccess('Failed to copy!');
+        }
+      };
+
+
+
+
   return (
     <>
       <div className={styles.container1}>
@@ -149,9 +163,67 @@ const page = () => {
         
         
         >
-            <button className={styles.btn1}>CODES!!</button>
+           <div className={styles.scroll_data}>
+            <span><BsChevronLeft className={styles.left}/></span>
+            SCROLL DOWN
+            <br/>
+            FOR CODES
+            <RxSlash className={styles.mid}/>
+            <BsChevronRight className={styles.right}/>
+           </div>
         </motion.div>
       </div>
+
+      <div className={styles.container2}>
+        <div className={styles.row1}>
+            <div className={styles.card1}>
+            <div className={styles.cssdata}>
+                <button onClick={()=>copyToClipBoard( `box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45), 0px 25px 20px -20px rgba(0, 0, 0, 0.45), 25px 0 20px -20px rgba(0, 0, 0, 0.45);`
+)}>
+                    COPY CSS
+                </button>
+                    {copySuccess}
+                </div>
+            </div>
+            <div className={styles.card1}>
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+        </div>
+        <div className={styles.row1}>
+            <div className={styles.card1}>
+                
+            </div>
+            <div className={styles.card1}>
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+        </div>
+        <div className={styles.row1}>
+            <div className={styles.card1}>
+                <button>
+                    COPY
+                </button>
+            </div>
+            <div className={styles.card1}>
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+            <div className={styles.card1}>
+
+            </div>
+        </div>
+      </div>
+      
     </>
   )
 }
